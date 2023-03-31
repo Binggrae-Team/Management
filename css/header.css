@@ -1,5 +1,5 @@
 /* header style */
-header {
+.front_header {
     height: 147px;
     background-color: #fff;
     width: 100%;
@@ -7,7 +7,7 @@ header {
 }
 
 .header {
-    /* position: absolute; */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -153,3 +153,77 @@ header .header_container .ham-menu .lang li a .icon {
     opacity: 0;
     transition: all 0.3s;
 } */
+
+/* 각 항목에 마우스 커서 이동시 점 보여줌 */
+.gnv .depth01>li:hover>a::after {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #e0462e;
+    position: absolute;
+    top: 4px;
+    right: -11px;
+}
+
+/* li 항목에 밑줄 안 보이게 그려둠 */
+.gnv .depth01>li > a::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #e0462e;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+}
+
+/* li 항목에 커서 이동 시 밑줄 보여줌 */
+.gnv .depth01>li:hover > a::before {
+    display: block;
+}
+
+.gnv .depth01>li:hover>a {
+    color: #e0462e;
+}
+
+.gnv .depth02 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    padding-top: 20px;
+}
+
+header:hover {
+    height: 573px;
+    border-radius: 0 0 50px 50px;
+    box-shadow: 0px 2px 9.8px 0.2px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+    padding-bottom: 30px;
+}
+
+header:hover .gnv .depth02 {
+    opacity: 1;
+    visibility: visible;
+    transition: all 1s 0.4s;
+}
+
+.gnv .depth02 li a {
+    padding: 7px 0;
+    display: block;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+    letter-spacing: -.02em;
+}
+
+.gnv .depth02 li:hover a {
+    color: #e0462e;
+    white-space: nowrap;
+}
